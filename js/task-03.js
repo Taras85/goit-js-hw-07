@@ -13,13 +13,22 @@ const images = [
   },
 ];
 const galleryList = document.querySelector('.gallery');
+// const galleryItems = document.querySelector('li');
 
-// console.log(galleryList);
+// console.log(galleryItems);
+
+galleryList.style.display = 'grid';
+galleryList.style.gap = '20px';
+galleryList.style.alignItems = 'center';
+galleryList.style.gridTemplateColumns = 'repeat(3, 30vw)';
+galleryList.style.gridTemplateRows = 'repeat(3, 400px)';
+
+// galleryItems.style.listStyle = 'none';
 
 const generateGallery = (urlEl, altEL) => {
   return `
-  <li> 
-    <img src='${urlEl}' alt='${altEL}'>
+  <li style=list-style:none> 
+    <img width= 100% src='${urlEl}' alt='${altEL}'>
   </li>`;
 };
 

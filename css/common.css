@@ -23,7 +23,7 @@ button {
   cursor: pointer;
 }
 
-.gallery {
+/* .gallery {
   display: grid;
   gap: 20px;
   align-items: center;
@@ -35,4 +35,4 @@ button {
 }
 .gallery li {
   list-style: none;
-}
+} */
