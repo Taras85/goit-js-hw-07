@@ -10,12 +10,12 @@ inputText.addEventListener('focus', () => {
 });
 
 inputText.addEventListener('blur', () => {
-  //   console.log(lengthChar);
-  //   console.log(inputText.dataset.length);
+  console.log(lengthChar);
+  console.log(inputText.dataset.length);
 
-  if (inputText.dataset.length > lengthChar) {
-    inputText.className = 'invalid';
-  } else {
+  if (inputText.dataset.length === lengthChar) {
     inputText.className = 'valid';
+  } else {
+    inputText.className = 'invalid';
   }
 });
