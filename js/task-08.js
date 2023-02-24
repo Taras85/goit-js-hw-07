@@ -10,7 +10,7 @@ function handleSubmit(event) {
 
   if (email.value === '' || password.value === '') {
     return alert(
-      'All fields are due buti orders! \n Всі поля повині бути заповнені',
+      'All fields are due buti orders! \n Всі поля повинні бути заповнені',
     );
   }
 
