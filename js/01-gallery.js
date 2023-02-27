@@ -1,8 +1,8 @@
-import { galleryItems } from "./gallery-items.js";
+import { galleryItems } from './gallery-items.js';
 // Change code below this line
 console.log(galleryItems);
 
-const galleryList = document.querySelector(".gallery");
+const galleryList = document.querySelector('.gallery');
 
 const generateHtml = ({ description, original, preview }) => {
   return `<div class="gallery__item">
@@ -16,36 +16,32 @@ const generateHtml = ({ description, original, preview }) => {
   </a>
 </div>`;
 };
-const generateGallery = galleryItems.map(generateHtml).join("");
+const generateGallery = galleryItems.map(generateHtml).join('');
 
-galleryList.insertAdjacentHTML("afterbegin", generateGallery);
+galleryList.insertAdjacentHTML('afterbegin', generateGallery);
 
 // ***//***// */
 
-galleryList.addEventListener("click", clickImage);
+galleryList.addEventListener('click', clickImage);
 
-const instance = basicLightbox.create(
-  `
-<img  >`,
-  {
-    onShow: (instance) => {
-      window.addEventListener("keydown", onEscKeyPress);
-    },
-    onClose: (instance) => {
-      window.removeEventListener("keydown", onEscKeyPress);
-    },
-  }
-);
+const instance = basicLightbox.create(`<img  >`, {
+  onShow: instance => {
+    window.addEventListener('keydown', clickEscKeyPress);
+  },
+  onClose: instance => {
+    window.removeEventListener('keydown', clickEscKeyPress);
+  },
+});
 
 function clickImage(event) {
   event.preventDefault();
   if (!event.target.dataset.source) return;
-  instance.element().querySelector("img").src = event.target.dataset.source;
-  instance.element().querySelector("img").alt = event.target.alt;
+  instance.element().querySelector('img').src = event.target.dataset.source;
+  instance.element().querySelector('img').alt = event.target.alt;
   instance.show();
 }
 
-function onEscKeyPress(event) {
-  if (event.code !== "Escape") return;
+function clickEscKeyPress(event) {
+  if (event.code !== 'Escape') return;
   instance.close();
 }
