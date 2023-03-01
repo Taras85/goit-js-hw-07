@@ -26,10 +26,10 @@ galleryList.addEventListener('click', clickImage);
 
 const instance = basicLightbox.create(`<img  >`, {
   onShow: instance => {
-    window.addEventListener('keydown', clickEscKeyPress);
+    window.addEventListener('keydown', pushEscKeyPress);
   },
   onClose: instance => {
-    window.removeEventListener('keydown', clickEscKeyPress);
+    window.removeEventListener('keydown', pushEscKeyPress);
   },
 });
 
@@ -41,7 +41,7 @@ function clickImage(event) {
   instance.show();
 }
 
-function clickEscKeyPress(event) {
+function pushEscKeyPress(event) {
   if (event.code !== 'Escape') return;
   instance.close();
 }
